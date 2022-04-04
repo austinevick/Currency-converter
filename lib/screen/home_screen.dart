@@ -1,21 +1,16 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:currency_converter/constant.dart';
 import 'package:currency_converter/model/currency_response_model.dart';
-import 'package:currency_converter/provider/currency_provider.dart';
 import 'package:currency_converter/screen/currency_screen.dart';
 import 'package:currency_converter/widget/custom_textfield.dart';
 import 'package:currency_converter/widget/rate_text_widget.dart';
-import 'package:flip_card/flip_card.dart';
 import 'package:flip_card/flip_card_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:intl/intl.dart';
 
 import '../apikey.dart';
 import '../model/currency_model.dart';
-import '../widget/custom_keyboard.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -52,7 +47,6 @@ class _HomeScreenState extends State<HomeScreen> {
         setState(() => exchangeRate = data.info!.rate!);
         print(data.result);
         setState(() => isVisible = true);
-
         return data;
       } else {
         setState(() => isLoading = false);
