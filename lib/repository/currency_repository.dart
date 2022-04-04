@@ -22,7 +22,6 @@ class CurrencyRepository {
     }
   }
 
-//https://api.exchangeratesapi.io/v1/symbols?access_key=66ad112c1a096bf27a345d18b71393f2
   Future<CurrencyModel> getCurrencyConversionRate(
       {String? convertFrom, String? convertTo, num? amount}) async {
     final response = await client.get(Uri.parse(baseUrl +
