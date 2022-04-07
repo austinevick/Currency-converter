@@ -14,10 +14,8 @@ class CurrencyScreen extends StatefulWidget {
 }
 
 class _CurrencyScreenState extends State<CurrencyScreen> {
-  List<MapEntry<String, dynamic>> searchResult = [];
   Map<String, dynamic> selectedValue = {};
-  ScrollController controller = ScrollController();
-  final search = TextEditingController();
+
   Future<Map<String, dynamic>> getCurrencies() async {
     try {
       Map<String, dynamic> currency =
@@ -42,7 +40,6 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
     super.initState();
   }
 
-  bool isSearching = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,35 +50,33 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
         body: SafeArea(
             minimum: const EdgeInsets.all(14),
             child: selectedValue.isEmpty
-                ? const Center(child: CircularProgressIndicator())
-                : Scrollbar(
-                    controller: controller,
-                    child: ListView(
-                      controller: controller,
-                      children: List.generate(
-                          selectedValue.length,
-                          (i) => Column(
-                                children: selectedValue.entries
-                                    .map((e) => ListTile(
-                                          onTap: () =>
-                                              Navigator.of(context).pop(e.key),
-                                          leading: CircleAvatar(
-                                            backgroundColor:
-                                                const Color(0xff292d36),
-                                            child: Text(e.key,
-                                                style: style.copyWith(
-                                                    fontSize: 14)),
-                                          ),
-                                          title: Text(
-                                            e.value,
-                                            style: style.copyWith(
-                                                color: const Color(0xff292d36),
-                                                fontSize: 14),
-                                          ),
-                                        ))
-                                    .toList(),
-                              )),
-                    ),
+                ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : ListView(
+                    children: List.generate(
+                        selectedValue.length,
+                        (i) => Column(
+                              children: selectedValue.entries
+                                  .map((e) => ListTile(
+                                        onTap: () =>
+                                            Navigator.of(context).pop(e.key),
+                                        leading: CircleAvatar(
+                                          backgroundColor:
+                                              const Color(0xff292d36),
+                                          child: Text(e.key,
+                                              style:
+                                                  style.copyWith(fontSize: 14)),
+                                        ),
+                                        title: Text(
+                                          e.value,
+                                          style: style.copyWith(
+                                              color: const Color(0xff292d36),
+                                              fontSize: 14),
+                                        ),
+                                      ))
+                                  .toList(),
+                            )),
                   )));
   }
 }
