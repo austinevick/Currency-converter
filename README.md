@@ -1,5 +1,8 @@
 # currency_converter
 
+![](https://github.com/austinevick/Currency-converter/blob/main/screenshots/Screenshot_20220404-051119.png)
+![](https://github.com/austinevick/Currency-converter/blob/main/screenshots/Screenshot_20220404-051134.png)
+
 A new Flutter project.
 
 ## Getting Started
