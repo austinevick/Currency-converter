@@ -1,9 +1,7 @@
 import 'dart:io';
 
 import 'package:currency_converter/constant.dart';
-import 'package:currency_converter/model/currency_symbol_model.dart';
 import 'package:currency_converter/provider/currency_provider.dart';
-import 'package:currency_converter/widget/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
 class CurrencyScreen extends StatefulWidget {

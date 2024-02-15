@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:currency_converter/apikey.dart';
 import 'package:currency_converter/model/currency_model.dart';
-import 'package:currency_converter/model/currency_symbol_model.dart';
 import 'package:http/http.dart';
 
 class CurrencyRepository {

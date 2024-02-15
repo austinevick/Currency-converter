@@ -1,5 +1,4 @@
 import 'package:currency_converter/model/currency_model.dart';
-import 'package:currency_converter/model/currency_symbol_model.dart';
 import 'package:currency_converter/repository/currency_repository.dart';
 
 class CurrencyProvider {

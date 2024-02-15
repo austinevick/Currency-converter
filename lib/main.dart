@@ -1,7 +1,5 @@
-import 'package:currency_converter/screen/currency_screen.dart';
 import 'package:currency_converter/screen/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 
 void main() {
   runApp(const MyApp());

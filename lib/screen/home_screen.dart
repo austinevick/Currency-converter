@@ -5,7 +5,6 @@ import 'package:currency_converter/model/currency_response_model.dart';
 import 'package:currency_converter/screen/currency_screen.dart';
 import 'package:currency_converter/widget/custom_textfield.dart';
 import 'package:currency_converter/widget/rate_text_widget.dart';
-import 'package:flip_card/flip_card_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
@@ -20,7 +19,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  FlipCardController controller = FlipCardController();
   final key = GlobalKey<FormState>();
   CurrencyModel currencies = CurrencyModel();
   final fromController = TextEditingController();
